@@ -17,11 +17,11 @@ struct surface {
 };
 
 #if defined(SIGMA_PBR_DEFFERED_POST_PROCESS_EFFECT)
-uniform sampler2D in_diffuse_roughness;
-uniform sampler2D in_normal_metalness;
-uniform sampler2D in_depth_stencil;
-uniform sampler2D in_image;
-uniform sampler2DArrayShadow in_shadow_map;
+layout(binding = 0) uniform sampler2D in_diffuse_roughness;
+layout(binding = 1) uniform sampler2D in_normal_metalness;
+layout(binding = 2) uniform sampler2D in_depth_stencil;
+layout(binding = 2) uniform sampler2D in_image;
+layout(binding = 3) uniform sampler2DArrayShadow in_shadow_map;
 
 layout(location = 0) out vec3 out_image;
 

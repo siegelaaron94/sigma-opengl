@@ -7,8 +7,8 @@
 // clang-format on
 
 // uniform samplerCube environment_map;
-uniform sampler2D environment_map;
-uniform sampler2D irradiance_map;
+layout(binding = 0) uniform sampler2D environment_map;
+layout(binding = 1) uniform sampler2D irradiance_map;
 
 // http://www.trentreed.net/blog/physically-based-shading-and-image-based-lighting/
 // http://blog.tobias-franke.eu/2014/03/30/notes_on_importance_sampling.html

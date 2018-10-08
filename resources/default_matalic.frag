@@ -4,9 +4,9 @@
 #include <uniforms.glsl>
 #include <vertex.glsl>
 
-uniform sampler2D basecolor_map;
-uniform sampler2D normal_map;
-uniform sampler2D roughness_map;
+layout(binding = 0) uniform sampler2D basecolor_map;
+layout(binding = 1) uniform sampler2D normal_map;
+layout(binding = 2) uniform sampler2D roughness_map;
 
 void main()
 {

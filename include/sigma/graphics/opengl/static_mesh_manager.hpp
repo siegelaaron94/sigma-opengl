@@ -53,11 +53,11 @@ namespace opengl {
             GLuint vertex_array = 0;
 
             // MAX_VERTEX_BLOCKS blocks of VERTEX_BLOCK_SIZE vertices.
-            buddy_array_allocator vertex_allocator{ MAX_VERTEX_BLOCKS };
+            buddy_array_allocator vertex_allocator { MAX_VERTEX_BLOCKS };
             GLuint vertex_buffer = 0;
 
             // MAX_INDEX_BLOCKS blocks of INDEX_BLOCK_SIZE indicies.
-            buddy_array_allocator index_allocator{ MAX_INDEX_BLOCKS };
+            buddy_array_allocator index_allocator { MAX_INDEX_BLOCKS };
             GLuint index_buffer = 0;
         };
 

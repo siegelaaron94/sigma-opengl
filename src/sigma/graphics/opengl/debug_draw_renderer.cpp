@@ -118,7 +118,7 @@ static inline const char* errorToString(const GLenum errorCode)
 namespace sigma {
 namespace opengl {
     debug_draw_renderer::debug_draw_renderer()
-        : mvpMatrix(glm::mat4{})
+        : mvpMatrix(glm::mat4 {})
         , linePointProgram(0)
         , linePointProgram_MvpMatrixLocation(-1)
         , textProgram(0)
