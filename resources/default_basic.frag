@@ -4,7 +4,7 @@
 #include <uniforms.glsl>
 #include <vertex.glsl>
 
-layout(binding=10) uniform default_basic {
+layout(binding=1) uniform default_basic {
     vec3 basecolor;
     float metalness;
     float roughness;
