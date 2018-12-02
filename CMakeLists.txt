@@ -14,7 +14,7 @@ add_library(sigma-opengl STATIC
 
 target_include_directories(sigma-opengl PUBLIC include)
 target_compile_definitions(sigma-opengl PRIVATE -DSIGMA_EXPORT)
-target_link_libraries(sigma-opengl PUBLIC sigma-core stb::stb debug-draw glad)
+target_link_libraries(sigma-opengl PUBLIC sigma-core stb::stb debug-draw::debug-draw glad::glad)
 target_package_resources(sigma-opengl resources)
 if(COTIRE_CMAKE_MODULE_VERSION)
 	cotire(sigma-opengl)

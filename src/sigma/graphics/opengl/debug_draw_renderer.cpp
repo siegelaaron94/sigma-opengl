@@ -11,7 +11,6 @@
 // ================================================================================================
 #include <sigma/graphics/opengl/debug_draw_renderer.hpp>
 
-#define DEBUG_DRAW_IMPLEMENTATION
 #include "debug_draw.hpp"
 
 #include <glad/glad.h>
