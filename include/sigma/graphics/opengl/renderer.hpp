@@ -10,7 +10,7 @@
 
 #include <glad/glad.h>
 
-#include <boost/functional/hash.hpp>
+#include <sigma/util/hash.hpp>
 
 namespace std {
 template <>
@@ -20,7 +20,7 @@ public:
     {
         std::size_t seed = 0;
         for (auto val : vec)
-            boost::hash_combine(seed, val);
+            seed = sigma::util::hash_combine(seed, val);
 
         return seed;
     }
