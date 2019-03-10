@@ -31,7 +31,7 @@ namespace opengl {
         glViewport(0, 0, size.x, size.y);
     }
 
-    void renderer::render(const graphics::renderer::world_view_type& world)
+    void renderer::render(const entt::registry<>& registry)
     {
     }
 

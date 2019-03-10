@@ -2,14 +2,25 @@ cmake_minimum_required(VERSION 3.10)
 project(sigma-opengl)
 
 add_library(sigma-opengl STATIC
-    src/sigma/graphics/opengl/debug_draw_renderer.cpp
     #src/sigma/graphics/opengl/cubemap_manager.cpp
     #src/sigma/graphics/opengl/geometry_buffer.cpp
-    src/sigma/graphics/opengl/renderer.cpp
     #src/sigma/graphics/opengl/shader_manager.cpp
     #src/sigma/graphics/opengl/static_mesh_manager.cpp
     #src/sigma/graphics/opengl/technique_manager.cpp
     #src/sigma/graphics/opengl/texture_manager.cpp
+    include/sigma/graphics/opengl/cubemap_manager.hpp
+    include/sigma/graphics/opengl/debug_draw_renderer.hpp
+    include/sigma/graphics/opengl/geometry_buffer.hpp
+    include/sigma/graphics/opengl/render_uniforms.hpp
+    include/sigma/graphics/opengl/renderer.hpp
+    include/sigma/graphics/opengl/shader_manager.hpp
+    include/sigma/graphics/opengl/static_mesh_manager.hpp
+    include/sigma/graphics/opengl/technique_manager.hpp
+    include/sigma/graphics/opengl/texture_manager.hpp
+    include/sigma/graphics/opengl/uniform_buffer.hpp
+    include/sigma/graphics/opengl/util.hpp
+    src/sigma/graphics/opengl/debug_draw_renderer.cpp
+    src/sigma/graphics/opengl/renderer.cpp
 )
 
 target_include_directories(sigma-opengl PUBLIC include)

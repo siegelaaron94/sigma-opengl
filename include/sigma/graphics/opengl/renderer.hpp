@@ -46,7 +46,7 @@ namespace opengl {
 
         virtual void resize(glm::uvec2 size) override;
 
-        virtual void render(const world_view_type& world) override;
+        virtual void render(const entt::registry<>& registry) override;
 
     private:
         void begin_pass(const graphics::pass& p);
