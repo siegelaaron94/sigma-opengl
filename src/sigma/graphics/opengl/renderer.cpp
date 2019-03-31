@@ -1,14 +1,19 @@
 #include <sigma/graphics/opengl/renderer.hpp>
 #include <sigma/graphics/opengl/util.hpp>
 
+#include <glad/glad.h>
+
 #include <iostream>
 
 namespace sigma {
 namespace opengl {
+    void debug_callback(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar* message, const void* userParam);
+
     renderer::renderer(glm::ivec2 size, std::shared_ptr<sigma::context> ctx)
         : graphics::renderer(size, ctx)
         , loader_status_(gladLoadGL())
         , size_(size.x, size.y)
+        , queue_(0)
     {
         if (!loader_status_)
             throw std::runtime_error("error: could not load OpenGL");
@@ -26,21 +31,26 @@ namespace opengl {
     {
     }
 
+    graphics::render_queue* renderer::queue()
+    {
+        return &queue_;
+    }
+
     void renderer::resize(glm::uvec2 size)
     {
         glViewport(0, 0, size.x, size.y);
     }
 
-    void renderer::render(const entt::registry<>& registry)
+    void renderer::render()
     {
     }
 
-    void renderer::begin_pass(const graphics::pass& p)
+    /*void renderer::begin_pass(const graphics::pass& p)
     {
         auto framebuffer = frame_buffer_for(p);
     }
 
-    /*void renderer::geomery_pass(const graphics::pass& p, const graphics::renderer::world_view_type& world)
+    void renderer::geomery_pass(const graphics::pass& p, const graphics::renderer::world_view_type& world)
     {
         std::vector<render_token> tokens;
         world.for_each([](static_mesh& mesh, transform& txform) {
@@ -78,7 +88,7 @@ namespace opengl {
                 tokens.push_back(t);
             }
         });
-    }*/
+    }
 
     void renderer::end_pass(const graphics::pass& p)
     {
@@ -169,7 +179,7 @@ namespace opengl {
 
         render_textures_[tex.id] = tid;
         return tid;
-    }
+    }*/
 
     void debug_callback(GLenum source,
         GLenum type,
